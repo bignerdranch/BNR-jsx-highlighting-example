@@ -1,0 +1,33 @@
+<html>
+<head>
+    <link rel="stylesheet" href="prism.css" />
+</head>
+<body>
+<pre><code class="language-jsx">
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import { Notifications } from 'expo';
+import * as Permissions from 'expo-permissions';
+import { Button, Input } from 'react-native-elements';
+
+const askForPushPermission = setToken => async () => {
+
+};
+
+export default function PushPermissionRequester() {
+  const [token, setToken] = useState('(token not requested yet)');
+  return (
+    &lt;View&gt;
+      &lt;Input value={token} /&gt;
+      &lt;Button
+        title="Ask Me for Push Permissions"
+        onPress={askForPushPermission(setToken)}
+      /&gt;
+    &lt;/View&gt;
+  );
+}
+</code></pre>
+
+<script src="prism.js"></script>
+</body>
+</html>

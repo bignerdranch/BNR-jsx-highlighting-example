@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EnlighterJS Test</title>
+
+    <!-- EnlighterJS Resources !-->
+    <link rel="stylesheet" href="enlighterjs.min.css" />
+</head>
+<body>
+
+    <main>
+        <!-- Code to hghlight !-->
+        <pre data-enlighter-language="js">
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import { Notifications } from 'expo';
+import * as Permissions from 'expo-permissions';
+import { Button, Input } from 'react-native-elements';
+const askForPushPermission = setToken => async () => {
+};
+export default function PushPermissionRequester() {
+  const [token, setToken] = useState('(token not requested yet)');
+  return (
+    &lt;View&gt;
+      &lt;Input value={token} /&gt;
+      &lt;Button
+        title="Ask Me for Push Permissions"
+        onPress={askForPushPermission(setToken)}
+      /&gt;
+    &lt;/View&gt;
+  );
+}
+        </pre>
+
+    </main>
+
+    <script type="text/javascript" src="enlighterjs.min.js"></script>
+    <script type="text/javascript">
+        // INIT CODE - simple page-wide initialization based on css selectors
+        // - highlight all pre + code tags (CSS3 selectors)
+        // - use javascript as default language
+        // - use theme "enlighter" as default theme
+        // - replace tabs with 2 spaces
+        EnlighterJS.init('pre', 'code', {
+                language : 'javascript',
+                theme: 'monokai',
+                indent : 2
+        });
+    </script>
+</body>
+</html>
